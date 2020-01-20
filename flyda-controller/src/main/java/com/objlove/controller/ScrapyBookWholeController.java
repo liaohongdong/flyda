@@ -1,12 +1,17 @@
 package com.objlove.controller;
 
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.objlove.pojo.ScrapyBookWhole;
+import com.objlove.pojo.ScrapyChapterWhole;
 import com.objlove.service.IScrapyBookWholeService;
+import com.objlove.service.IScrapyChapterWholeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * <p>
@@ -24,16 +29,17 @@ public class ScrapyBookWholeController extends BaseController {
     @Autowired
     private IScrapyBookWholeService scrapyBookWholeService;
 
-//    @Autowired
-//    private ScrapyBookWholeMapper scrapyBookWholeMapper;
+    @Autowired
+    private IScrapyChapterWholeService scrapyChapterWholeService;
 
     @RequestMapping(value = "/getBookWholeById", method = RequestMethod.GET)
     @ResponseBody
-    public Object getBookWholeById(@RequestParam(value = "id") Integer id) {
-        logger.debug("this is a log test, debug");
-        logger.info("this is a log test, info");
+    public Object getBookWholeById(@RequestParam("id") Integer id,
+                                   @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+                                   @RequestParam(value = "PageSize", defaultValue = "10") Integer pageSize) {
         ScrapyBookWhole whole = scrapyBookWholeService.getById(id);
-        System.out.println(whole);
+        List<ScrapyChapterWhole> chapterWhole = scrapyChapterWholeService.getByCid(new Page<>(pageNum, pageSize), Long.valueOf((Integer) id));
+        whole.setChapterWhole(chapterWhole);
         return whole;
     }
 }

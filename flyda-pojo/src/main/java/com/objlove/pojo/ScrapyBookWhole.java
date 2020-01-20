@@ -1,10 +1,13 @@
 package com.objlove.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.util.List;
 
 /**
  * <p>
@@ -89,5 +92,11 @@ public class ScrapyBookWhole extends BaseEntity {
      * 最新更新时间
      */
     private String lastTime;
+
+    /**
+     * 书籍章节
+     */
+    @TableField(exist = false)
+    private List<ScrapyChapterWhole> chapterWhole;
 
 }

@@ -54,6 +54,8 @@ spring:
 mybatis-plus:
   type-aliases-package: com.objlove.pojo
   mapper-locations: classpath*:com/objlove/mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     db-config:
       db-column-underline: false #驼峰下划线转换
@@ -62,4 +64,4 @@ mybatis-plus:
       id-type: input #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
       db-type: mysql
 
-
+logging.level.org.springframework.boot.autoconfigure: ERROR
