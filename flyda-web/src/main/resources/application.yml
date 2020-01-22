@@ -50,6 +50,14 @@ spring:
         url-pattern: /*
         exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
 
+  redis:
+    host: 39.108.115.177
+    port: 6379
+    lettuce:
+      pool:
+        max-idle: 8
+        min-idle: 0
+        max-active: 8
 
 mybatis-plus:
   type-aliases-package: com.objlove.pojo

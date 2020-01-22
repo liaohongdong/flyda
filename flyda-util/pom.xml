@@ -10,6 +10,12 @@
     
     <artifactId>flyda-util</artifactId>
     <name>flyda-util</name>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 
 
 </project>
