@@ -1,9 +1,14 @@
 package com.objlove.web;
 
 
+import java.lang.annotation.*;
 
-public class Liao {
-    public static void main(String[] args) {
+@Target({ElementType.TYPE, ElementType.FIELD, ElementType.PARAMETER, ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface Liao {
+    String name() default "not name";
 
-    }
+    int age() default 0;
+
 }
