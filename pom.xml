@@ -35,7 +35,7 @@
         <mp.springboot.version>3.1.0</mp.springboot.version>
         <lombok.version>1.16.12</lombok.version>
         <!--        <jackson.version>2.7.4</jackson.version>-->
-        <jackson.version>2.9.6</jackson.version>
+        <jackson.version>2.9.10.3</jackson.version>
         <jackson-guava.version>2.5.3</jackson-guava.version>
         <jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
         <jackson-core-asl.version>1.9.13</jackson-core-asl.version>
