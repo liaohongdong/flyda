@@ -18,6 +18,6 @@ import java.util.List;
 @Mapper
 public interface ScrapyChapterWholeMapper extends BaseMapper<ScrapyChapterWhole> {
 
-    public List<ScrapyChapterWhole> getByCid(Page<?> page, Long cid);
+    List<ScrapyChapterWhole> getByCid(Page<?> page, Long cid);
 
 }

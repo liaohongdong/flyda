@@ -6,6 +6,7 @@ import com.objlove.pojo.ScrapyBookWhole;
 import com.objlove.pojo.ScrapyChapterWhole;
 import com.objlove.service.IScrapyBookWholeService;
 import com.objlove.service.IScrapyChapterWholeService;
+import com.objlove.util.dto.JsonData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,12 +35,13 @@ public class ScrapyBookWholeController extends BaseController {
 
     @RequestMapping(value = "/getBookWholeById", method = RequestMethod.GET)
     @ResponseBody
-    public Object getBookWholeById(@RequestParam("id") Integer id,
-                                   @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
-                                   @RequestParam(value = "PageSize", defaultValue = "10") Integer pageSize) {
+    public JsonData getBookWholeById(@RequestParam("id") Integer id,
+                                     @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+                                     @RequestParam(value = "PageSize", defaultValue = "10") Integer pageSize) {
         ScrapyBookWhole whole = scrapyBookWholeService.getById(id);
-        List<ScrapyChapterWhole> chapterWhole = scrapyChapterWholeService.getByCid(new Page<>(pageNum, pageSize), Long.valueOf((Integer) id));
+        String cid = whole.getBookUrl().split("/")[2];
+        List<ScrapyChapterWhole> chapterWhole = scrapyChapterWholeService.getByCid(new Page<>(pageNum, pageSize), Long.valueOf(cid));
         whole.setChapterWhole(chapterWhole);
-        return whole;
+        return JsonData.build(whole, "查询成功", 200);
     }
 }

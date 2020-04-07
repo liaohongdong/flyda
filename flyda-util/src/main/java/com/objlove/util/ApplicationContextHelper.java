@@ -6,8 +6,11 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 @Component("applicationContextHelper")
-public class applicationContextHelper implements ApplicationContextAware {
+public class ApplicationContextHelper implements ApplicationContextAware {
     private static ApplicationContext applicationContext;
+
+    public ApplicationContextHelper() {
+    }
 
     @Override
     public void setApplicationContext(ApplicationContext context) throws BeansException {
@@ -27,4 +30,5 @@ public class applicationContextHelper implements ApplicationContextAware {
         }
         return applicationContext.getBean(name, clazz);
     }
+
 }

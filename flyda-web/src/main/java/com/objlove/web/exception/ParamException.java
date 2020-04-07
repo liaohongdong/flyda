@@ -1,4 +1,4 @@
-package com.objlove.util.exception;
+package com.objlove.web.exception;
 
 public class ParamException extends RuntimeException {
     public ParamException() {

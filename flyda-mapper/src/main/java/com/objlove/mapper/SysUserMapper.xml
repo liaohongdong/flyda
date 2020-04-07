@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.flyda.mapper.SysUserMapper">
+    <resultMap id="BaseResultMap" type="com.flyda.pojo.SysUser">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="username" jdbcType="VARCHAR" property="username" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="phone" jdbcType="VARCHAR" property="phone" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="dept_id" jdbcType="INTEGER" property="deptId" />
+        <result column="status" jdbcType="INTEGER" property="status" />
+        <result column="remark" jdbcType="VARCHAR" property="remark" />
+        <result column="operator" jdbcType="VARCHAR" property="operator" />
+        <result column="operate_time" jdbcType="VARCHAR" property="operateTime" />
+        <result column="operate_ip" jdbcType="VARCHAR" property="operateIp" />
+    </resultMap>
+    <select id="getSysUserList" resultMap="BaseResultMap">
+        select * from sys_user
+    </select>
+</mapper>

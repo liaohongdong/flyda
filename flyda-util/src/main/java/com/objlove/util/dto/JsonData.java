@@ -15,14 +15,14 @@ public class JsonData {
     private Object data;
     private Integer code;
 
-    public JsonData() {
+    public  JsonData() {
     }
 
     public JsonData(Boolean status) {
         this.status = status;
     }
 
-    public static JsonData success(Object obj, String msg, int code) {
+    public static JsonData build(Object obj, String msg, int code) {
         JsonData jsonData = new JsonData(true);
         jsonData.setCode(code);
         jsonData.setMsg(msg);
@@ -30,14 +30,14 @@ public class JsonData {
         return jsonData;
     }
 
-    public static JsonData success(String msg, int code) {
+    public static JsonData build(String msg, int code) {
         JsonData jsonData = new JsonData(true);
         jsonData.setMsg(msg);
         jsonData.setCode(code);
         return jsonData;
     }
 
-    public static JsonData success() {
+    public static JsonData build() {
         return new JsonData(true);
     }
 
