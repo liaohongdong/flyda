@@ -54,7 +54,7 @@
         <solrj.version>4.10.3</solrj.version>
         <slf4j.version>1.7.25</slf4j.version>
         <validation.api.version>2.0.1.Final</validation.api.version>
-        <hibernate-validator.version>6.1.2.Final</hibernate-validator.version>
+        <hibernate-validator.version>6.1.5.Final</hibernate-validator.version>
     </properties>
 
     <dependencies>
