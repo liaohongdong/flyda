@@ -40,7 +40,7 @@
         <jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
         <jackson-core-asl.version>1.9.13</jackson-core-asl.version>
         <httpclient.version>4.5.2</httpclient.version>
-        <mysql.version>5.1.45</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <joda-time.version>2.3</joda-time.version>
         <commons-lang3.version>3.4</commons-lang3.version>
         <commons-io.version>1.3.2</commons-io.version>
